@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		5BBF035A274442B900E7F387 /* RoutineView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5BBF0359274442B900E7F387 /* RoutineView.swift */; };
 		5BD40AB0274414E100CC6986 /* greenappApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5BD40AAF274414E100CC6986 /* greenappApp.swift */; };
 		5BD40AB2274414E100CC6986 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5BD40AB1274414E100CC6986 /* ContentView.swift */; };
 		5BD40AB4274414E200CC6986 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 5BD40AB3274414E200CC6986 /* Assets.xcassets */; };
@@ -15,6 +16,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		5BBF0359274442B900E7F387 /* RoutineView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RoutineView.swift; sourceTree = "<group>"; };
 		5BD40AAC274414E100CC6986 /* greenapp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = greenapp.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		5BD40AAF274414E100CC6986 /* greenappApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = greenappApp.swift; sourceTree = "<group>"; };
 		5BD40AB1274414E100CC6986 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
@@ -55,6 +57,7 @@
 			children = (
 				5BD40AAF274414E100CC6986 /* greenappApp.swift */,
 				5BD40AB1274414E100CC6986 /* ContentView.swift */,
+				5BBF0359274442B900E7F387 /* RoutineView.swift */,
 				5BD40AB3274414E200CC6986 /* Assets.xcassets */,
 				5BD40AB5274414E200CC6986 /* Preview Content */,
 			);
@@ -141,6 +144,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				5BBF035A274442B900E7F387 /* RoutineView.swift in Sources */,
 				5BD40AB2274414E100CC6986 /* ContentView.swift in Sources */,
 				5BD40AB0274414E100CC6986 /* greenappApp.swift in Sources */,
 			);
@@ -286,7 +290,7 @@
 					"@executable_path/Frameworks",
 				);
 				MARKETING_VERSION = 1.0;
-				PRODUCT_BUNDLE_IDENTIFIER = com.marceloesposito.greenapp;
+				PRODUCT_BUNDLE_IDENTIFIER = io.marceloesposito.greenapp;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
@@ -315,7 +319,7 @@
 					"@executable_path/Frameworks",
 				);
 				MARKETING_VERSION = 1.0;
-				PRODUCT_BUNDLE_IDENTIFIER = com.marceloesposito.greenapp;
+				PRODUCT_BUNDLE_IDENTIFIER = io.marceloesposito.greenapp;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
