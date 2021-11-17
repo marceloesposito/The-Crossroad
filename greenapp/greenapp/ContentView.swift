@@ -34,7 +34,7 @@ struct ContentView: View {
                     Image(systemName: "triangle.fill")
                         .foregroundColor(.orange)
                         .padding(.horizontal, 30)
-                    Text("-13% CO2 emissions to last week")
+                    Text("-14% CO2 emissions to last week")
                         .font(.callout)
                         .lineLimit(1)
                         .minimumScaleFactor(0.5)
