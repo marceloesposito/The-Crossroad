@@ -89,7 +89,7 @@ struct ContentView: View {
                         Text("My Routines")
                             .font(.title2)
                             .fontWeight(.semibold)
-                            .padding(.leading, 10)
+                            .padding(.leading, 20)
                         Spacer()
                         Image(systemName: "plus")
                             .foregroundColor(.accentColor)
@@ -99,13 +99,11 @@ struct ContentView: View {
                 }
             }
         }
-            
-            
             // navigation bar controls and title
             .navigationTitle("Greenr")
             .toolbar {
                 NavigationLink(destination: DestinationView()) {
-                    Image(systemName: "person.circle.fill").foregroundColor(.accentColor).font(.title2)}
+                    Image(systemName: "person.circle.fill").foregroundColor(.accentColor).font(.title)}
             }
         }
     }
