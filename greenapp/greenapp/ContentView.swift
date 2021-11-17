@@ -28,7 +28,7 @@ struct ContentView: View {
                 
                 
                 
-                NavigationLink(destination: Text("Ciaoo")) {
+                NavigationLink(destination: Text("Ciao")) {
                     HStack{
                         Image(systemName: "triangle.fill")
                         Group{
