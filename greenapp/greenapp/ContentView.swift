@@ -32,14 +32,14 @@ struct ContentView: View {
                     HStack{
                         Image(systemName: "triangle.fill")
                         Group{
-                        Text("-13% less CO2 emitted than last week")
-                            .lineLimit(1)
-                            .minimumScaleFactor(0.5)
-                            .padding(10)
-                    Label(
-                        "testo dinamico"
-                        , systemImage:"chevron.right")
-                        .labelStyle(.iconOnly)
+                            Text("-13% less CO2 emitted than last week")
+                                .lineLimit(1)
+                                .minimumScaleFactor(0.5)
+                                .padding(10)
+                            Label(
+                                "testo dinamico"
+                                , systemImage:"chevron.right")
+                                .labelStyle(.iconOnly)
                         }.foregroundColor(.primary)
                     }
                 }
@@ -96,10 +96,9 @@ struct ContentView: View {
                             .padding(.trailing,20)
                             .font(.title)
                     }
-                    
-                }
                 }
             }
+        }
             
             
             // navigation bar controls and title
@@ -107,7 +106,6 @@ struct ContentView: View {
             .toolbar {
                 NavigationLink(destination: DestinationView()) {
                     Image(systemName: "person.circle.fill").foregroundColor(.accentColor).font(.title2)}
-                
             }
         }
     }

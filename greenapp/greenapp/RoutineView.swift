@@ -9,7 +9,10 @@ import Foundation
 import SwiftUI
 
 struct RoutineView: View {
+    
+    var titolo: String
+    
     var body: some View {
-    Text("ciao")
+    Text(titolo)
     }
 }
