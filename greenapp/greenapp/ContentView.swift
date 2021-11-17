@@ -15,7 +15,7 @@ struct ContentView: View {
         ]
         
         
-
+        
         
         NavigationView{
             VStack{
@@ -28,24 +28,41 @@ struct ContentView: View {
                 
                 
                 
-                
-                // button that leads to overall progress view
-                HStack{
-                    Image(systemName: "triangle.fill")
-                        .foregroundColor(.orange)
-                        .padding(.horizontal, 30)
-                    Text("-13% CO2 emissions to last week")
-                        .font(.callout)
-                        .lineLimit(1)
-                        .minimumScaleFactor(0.5)
-                        .padding(.vertical, 11)
-                    Image(systemName: "chevron.right")
-                        .padding(.horizontal, 20)
+                NavigationLink(destination: Text("Ciao")) {
+                    HStack{
+                        Image(systemName: "triangle.fill")
+                        Group{
+                        Text("-13% less CO2 emitted than last week")
+                            .lineLimit(1)
+                            .minimumScaleFactor(0.5)
+                            .padding(10)
+                    Label(
+                        "testo dinamico"
+                        , systemImage:"chevron.right")
+                        .labelStyle(.iconOnly)
+                        }.foregroundColor(.primary)
+                    }
                 }
                 Divider()
-                    .padding(.bottom, 8)
+                    .padding(.bottom, 10)
+                // button that leads to overall progress view
+                /* HStack{
+                 Image(systemName: "triangle.fill")
+                 .foregroundColor(.orange)
+                 .padding(.horizontal, 30)
+                 Text("-13% CO2 emissions to last week")
+                 .font(.callout)
+                 .lineLimit(1)
+                 .minimumScaleFactor(0.5)
+                 .padding(.vertical, 11)
+                 Image(systemName: "chevron.right")
+                 .padding(.horizontal, 20)
+                 }
+                 Divider()
+                 .padding(.bottom, 8)
+                 */
                 
-// My routines grid
+                // My routines grid
                 
                 
                 ScrollView(.vertical) {
@@ -64,7 +81,7 @@ struct ContentView: View {
                     
                     
                     
-// header with button to add routines
+                    // header with button to add routines
                     
                 header:{
                     HStack{
@@ -85,7 +102,7 @@ struct ContentView: View {
             }
             
             
-// navigation bar controls and title
+            // navigation bar controls and title
             .navigationTitle("Greenr")
             .toolbar {
                 NavigationLink(destination: DestinationView()) {
@@ -163,7 +180,7 @@ struct ContentView_Previews: PreviewProvider {
             ContentView()
             ContentView()
                 .preferredColorScheme(.dark)
-.previewInterfaceOrientation(.portrait)
+                .previewInterfaceOrientation(.portrait)
         }
     }
 }
