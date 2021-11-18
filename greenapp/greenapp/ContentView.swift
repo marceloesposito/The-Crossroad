@@ -8,7 +8,7 @@
 import SwiftUI
 
 struct ContentView: View {
-
+    
     
     var body: some View {
         let columns: [GridItem] = [
@@ -29,42 +29,19 @@ struct ContentView: View {
                     .scaledToFit()
                 
                 
-                
-                NavigationLink(destination: Text("Ciao")) {
-                    HStack{
-                        Image(systemName: "triangle.fill")
-                        Group{
-                            Text("-13% less CO2 emitted than last week")
-                                .lineLimit(1)
-                                .minimumScaleFactor(0.5)
-                                .padding(10)
-                            Label(
-                                "testo dinamico"
-                                , systemImage:"chevron.right")
-                                .labelStyle(.iconOnly)
-                        }.foregroundColor(.primary)
-                    }
+                NavigationLink {
+                    Text("ciao")
+                } label: {
+                    Text("Click to see overall progress")
+                        .foregroundColor(Color.white)
+                        .cornerRadius(100)
+                        .background {
+                            LinearGradient(colors: [.cyan,.green,.yellow], startPoint: .topLeading, endPoint: .bottomTrailing)
+                        }
+                        .shadow(radius: 4, y: 2)
                 }
-                Divider()
-                    .padding(.bottom, 10)
-                // button that leads to overall progress view
-                /* HStack{
-                 Image(systemName: "triangle.fill")
-                 .foregroundColor(.orange)
-                 .padding(.horizontal, 30)
-                 Text("-13% CO2 emissions to last week")
-                 .font(.callout)
-                 .lineLimit(1)
-                 .minimumScaleFactor(0.5)
-                 .padding(.vertical, 11)
-                 Image(systemName: "chevron.right")
-                 .padding(.horizontal, 20)
-                 }
-                 Divider()
-                 .padding(.bottom, 8)
-                 */
                 
-                // My routines grid
+                Divider()
                 
                 
                 ScrollView(.vertical) {
@@ -99,86 +76,83 @@ struct ContentView: View {
                             .font(.title)
                     }
                 }
+                }
             }
-        }
+            
             // navigation bar controls and title
             .navigationTitle("Greenr")
             .toolbar {
-                NavigationLink(destination: DestinationView()) {
+                NavigationLink(destination: Text("ciao")) {
                     Image(systemName: "person.circle.fill").foregroundColor(.accentColor).font(.title)}
             }
         }
     }
-}
-
-
-
-
-
-
-
-
-//just for navigation testing
-
-
-struct DestinationView: View{
-    var body: some View{
-        Text("Hello World")
-    }
-}
-
-
-
-
-
-
-/*
- routine button, to integrate in different file, maibe RoutineView
- 
- actually they should all be navigation links
- */
-
-
-struct routineButton: View {
-    var title: String
-    var icon: String
-    var color: Color
     
-    var body: some View {
-        Button {
-            print("button pressed")
-        } label: {
-            VStack{
-                Image(systemName:icon)
-                    .font(.title)
-                    .padding(3)
-                Text(title)
-                    .font(.title2)
-            }.frame(width: 180, height: 120)
-                .background(color)
-                .cornerRadius(18)
-                .foregroundColor(.white)
-                .shadow(color: color, radius: 4, y: 2)
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    /*
+     routine button, to integrate in different file, maibe RoutineView
+     
+     actually they should all be navigation links
+     */
+    
+    
+    struct routineButton: View {
+        var title: String
+        var icon: String
+        var color: Color
+        
+        var body: some View {
+            Button {
+                print("button pressed")
+            } label: {
+                VStack{
+                    Image(systemName:icon)
+                        .font(.title)
+                        .padding(3)
+                    Text(title)
+                        .font(.title2)
+                }.frame(width: 180, height: 120)
+                    .background(color)
+                    .cornerRadius(18)
+                    .foregroundColor(.white)
+                    .shadow(color: color, radius: 4, y: 2)
+            }
         }
     }
-}
-
-
-
-
-
-
-
-
-
-
-struct ContentView_Previews: PreviewProvider {
-    static var previews: some View {
-        Group {
-            ContentView()
-            ContentView()
-                .preferredColorScheme(.dark)
-                .previewInterfaceOrientation(.portrait)
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    struct ContentView_Previews: PreviewProvider {
+        static var previews: some View {
+            Group {
+                ContentView()
+                //            ContentView()
+                //                .preferredColorScheme(.dark)
+                //                .previewInterfaceOrientation(.portrait)
+            }
         }
     }
 }
