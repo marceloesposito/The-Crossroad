@@ -32,16 +32,19 @@ struct ContentView: View {
                 NavigationLink {
                     Text("ciao")
                 } label: {
-                    Text("Click to see overall progress")
+                    Text("Overall Progress")
                         .foregroundColor(Color.white)
-                        .cornerRadius(100)
+                        .font(.title3)
+                        .fontWeight(.semibold)
+                        .padding(30)
+                        .padding(.horizontal, 80)
                         .background {
-                            LinearGradient(colors: [.cyan,.green,.yellow], startPoint: .topLeading, endPoint: .bottomTrailing)
-                        }
+                            Color.yellow
+                        }.cornerRadius(18)
                         .shadow(radius: 4, y: 2)
-                }
+                }.padding(.vertical, 18)
                 
-                Divider()
+                
                 
                 
                 ScrollView(.vertical) {
@@ -64,7 +67,6 @@ struct ContentView: View {
                     
                 header:{
                     HStack{
-                        
                         Text("My Routines")
                             .font(.title2)
                             .fontWeight(.semibold)
@@ -75,8 +77,9 @@ struct ContentView: View {
                             .padding(.trailing,20)
                             .font(.title)
                     }
+                    .padding(.bottom, 5)
                 }
-                }
+            }
             }
             
             // navigation bar controls and title
