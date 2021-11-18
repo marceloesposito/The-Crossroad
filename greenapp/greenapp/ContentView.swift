@@ -23,11 +23,24 @@ struct ContentView: View {
             VStack{
                 
                 //eco-world
-                
-                Image(uiImage:(#imageLiteral(resourceName: "eco_world.png")))
+                ZStack{
+                Image(uiImage:#imageLiteral(resourceName: "Eco-world.png"))
                     .resizable()
-                    .scaledToFit()
-                
+                    .scaledToFill()
+                    VStack{
+                    HStack(alignment: .top){
+                        Spacer()
+                        NavigationLink(destination: Text("ciao")) {
+                            Image(systemName: "square.and.arrow.up.circle.fill")
+                                .font(.title)
+                                .padding(7)
+                                .padding(.horizontal, 13)
+                                .foregroundColor(Color.gray.opacity(0.7))
+                        }
+                    }
+                        Spacer()
+                    }
+                }
                 
                 NavigationLink {
                     Text("ciao")
@@ -83,7 +96,7 @@ struct ContentView: View {
             }
             
             // navigation bar controls and title
-            .navigationTitle("Greenr")
+            .navigationTitle("Greenapp")
             .toolbar {
                 NavigationLink(destination: Text("ciao")) {
                     Image(systemName: "person.circle.fill").foregroundColor(.accentColor).font(.title)}
