@@ -15,20 +15,27 @@ struct RoutineProgressView: View {
     
     var body: some View {
         NavigationView{
+            ScrollView(.vertical){
             VStack{
                 
                 
-                
+//                Divider()
                 Image(uiImage: #imageLiteral(resourceName: "Chart.png"))
                     .resizable()
                     .scaledToFit()
+                    .padding(.top, 40)
+                
+                
+//                Image(uiImage:#imageLiteral(resourceName:"3-dots.png"))
+                
+                
                 
                 HStack {
                     Text("Footprint")
                         .font(.title2)
                         .padding(.leading,20)
                     Spacer()
-                }
+                }.padding(.top, 30)
                 
                 
                 
@@ -99,6 +106,57 @@ struct RoutineProgressView: View {
                     }
                     
                 }
+                
+                HStack{
+                    Text("Learn More")
+                        .font(.title.bold())
+                        .padding(.top, 30)
+                        .padding(.leading, 20)
+                    
+                    Spacer()
+                    
+                }
+                
+            
+               
+                      
+                    
+                VStack(){
+                    Text("Top 1% of EU households have carbon footprints 22 times larger than climate targets allow")
+                        .font(.system(.title2, design: .rounded))
+                        .fontWeight(.bold)
+                        .padding(13)
+                        .padding(.top, 10)
+                        .foregroundColor(Color.white)
+                    Spacer()
+                        
+                    }
+                
+                
+                
+//                importanteee
+//8=================================D
+                
+                    .frame(width: 414 ,height: 1080)
+                
+                
+//8=================================D
+                
+                
+                .cornerRadius(20)
+                .background {
+                    ZStack{
+                    Image(uiImage: #imageLiteral (resourceName: "house-learn-more.png.jpg"))
+                        .resizable()
+                        .scaledToFill()
+                        .frame(height: 1080)
+                        
+                        LinearGradient(gradient:Gradient(colors: [Color.black .opacity(0.7), Color.init(red: 0.46, green: 0.75, blue: 1.69).opacity(0)]) , startPoint: .bottom, endPoint: .top)
+                        
+                    }
+                }
+                .cornerRadius(20)
+                
                 Spacer()
             }
             .navigationBarTitleDisplayMode(.large)
@@ -113,12 +171,12 @@ struct RoutineProgressView: View {
                 
             }
         }
-        
+        }
     }
 }
 
 struct RoutineProgressView_Previews: PreviewProvider {
     static var previews: some View {
-        RoutineProgressView(routineName: "House routine")
+        RoutineProgressView(routineName: "My House")
     }
 }
