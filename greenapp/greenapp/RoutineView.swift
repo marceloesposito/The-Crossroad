@@ -17,10 +17,10 @@ struct RoutineView: View {
         NavigationView{
             ScrollView(.vertical){
                 Text("ciao")
-            }.navigationTitle("routine modal")
+            }.navigationTitle("New Routine")
                 .navigationBarTitleDisplayMode(.inline)
         }
-        
+
     }
 }
 
