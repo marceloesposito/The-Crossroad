@@ -9,6 +9,7 @@ import SwiftUI
 
 struct ContentView: View {
     
+    @State var isShowing: Bool = false
     
     var body: some View {
         let columns: [GridItem] = [
@@ -34,7 +35,7 @@ struct ContentView: View {
                             Image(systemName: "square.and.arrow.up.circle.fill")
                                 .font(.title)
                                 .padding(7)
-                                .padding(.horizontal, 13)
+                                .padding(.horizontal, 20)
                                 .foregroundColor(Color.gray.opacity(0.7))
                         }
                     }
@@ -49,13 +50,13 @@ struct ContentView: View {
                         .foregroundColor(Color.white)
                         .font(.title3)
                         .fontWeight(.semibold)
-                        .padding(30)
+                        .padding(20)
                         .padding(.horizontal, 80)
                         .background {
                             Color.yellow
                         }.cornerRadius(18)
                         .shadow(radius: 4, y: 2)
-                }.padding(.vertical, 18)
+                }.padding(.vertical, 15)
                 
                 
                 
@@ -63,11 +64,11 @@ struct ContentView: View {
                 ScrollView(.vertical) {
                     Section {
                         LazyVGrid(columns: columns,spacing: 20, pinnedViews: .sectionHeaders) {
-                            routineButton(title: "Transportation", icon: "car.fill", color: Color.red)
-                            routineButton(title: "House", icon: "house.fill", color: Color.green)
-                            routineButton(title: "Device", icon: "iphone.homebutton", color: Color.purple)
-                            routineButton(title: "Nutrition", icon: "leaf.fill", color: Color.teal)
-                            routineButton(title: "custom 1", icon: "abc", color: .orange)
+                            routineButton(title: "Transportation", icon: "car.fill", color: Color.red, isShowing: $isShowing)
+                            routineButton(title: "House", icon: "house.fill", color: Color.green, isShowing: $isShowing)
+                            routineButton(title: "Device", icon: "iphone.homebutton", color: Color.purple, isShowing: $isShowing)
+                            routineButton(title: "Nutrition", icon: "leaf.fill", color: Color.teal, isShowing: $isShowing)
+                            routineButton(title: "custom 1", icon: "abc", color: .orange, isShowing: $isShowing)
                             
                         }
                         .padding(.horizontal, 10)
@@ -102,6 +103,9 @@ struct ContentView: View {
                     Image(systemName: "person.circle.fill").foregroundColor(.accentColor).font(.title)}
             }
         }
+        .sheet(isPresented: $isShowing, content: {
+            RoutineView(titolo: "ciao")
+        })
     }
     
     
@@ -133,9 +137,11 @@ struct ContentView: View {
         var icon: String
         var color: Color
         
+        @Binding var isShowing : Bool
+        
         var body: some View {
             Button {
-                print("button pressed")
+                isShowing.toggle()
             } label: {
                 VStack{
                     Image(systemName:icon)
@@ -165,9 +171,8 @@ struct ContentView: View {
         static var previews: some View {
             Group {
                 ContentView()
-                //            ContentView()
-                //                .preferredColorScheme(.dark)
-                //                .previewInterfaceOrientation(.portrait)
+                    .previewInterfaceOrientation(.portrait)
+              
             }
         }
     }

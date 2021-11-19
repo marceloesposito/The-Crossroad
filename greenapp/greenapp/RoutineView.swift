@@ -12,7 +12,26 @@ struct RoutineView: View {
     
     var titolo: String
     
+    
     var body: some View {
-    Text(titolo)
+        NavigationView{
+            ScrollView(.vertical){
+                Text("ciao")
+            }.navigationTitle("routine modal")
+                .navigationBarTitleDisplayMode(.inline)
+        }
+        
+    }
+}
+
+
+
+struct ContentView_Previews: PreviewProvider {
+    static var previews: some View {
+        Group {
+            RoutineView(titolo: "ciao")
+.previewInterfaceOrientation(.portrait)
+          
+        }
     }
 }
