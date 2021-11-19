@@ -9,17 +9,38 @@ import Foundation
 import SwiftUI
 
 struct RoutineView: View {
-    
+    @State private var routineName: String = ""
+    @State private var isEditing = false
     var titolo: String
     
     
     var body: some View {
-        NavigationView{
-            ScrollView(.vertical){
-                Text("ciao")
-            }.navigationTitle("routine modal")
-                .navigationBarTitleDisplayMode(.inline)
+        VStack(alignment: .leading) {
+            Text("New routine")
+                .font(.title)
+                .fontWeight(.bold)
+                .padding()
+            TextField(
+            "Routine name",
+        text: $routineName
+            ) { isEditing in
+                    self.isEditing = isEditing
+                }
+            Picker(selection: /*@START_MENU_TOKEN@*/.constant(1)/*@END_MENU_TOKEN@*/, label: Text("Category")) {
+                Text("House").tag(1)
+                Text("Nutrition").tag(2)
+                Text("Transportation").tag(3)
+            }
+            Toggle(isOn: /*@START_MENU_TOKEN@*//*@PLACEHOLDER=Is On@*/.constant(true)/*@END_MENU_TOKEN@*/) {
+                Text("Entire day")
+            }
+            DatePicker(selection: .constant(Date()), displayedComponents: DatePickerComponents.hourAndMinute, label: { Text("Start") })
+            DatePicker(selection: /*@START_MENU_TOKEN@*/.constant(Date())/*@END_MENU_TOKEN@*/, displayedComponents: DatePickerComponents.hourAndMinute, label: { Text("End") })
+            
+            
+                        
         }
+
         
     }
 }
