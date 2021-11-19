@@ -34,7 +34,7 @@ struct ContentView: View {
                         NavigationLink(destination: Text("ciao")) {
                             Image(systemName: "square.and.arrow.up.circle.fill")
                                 .font(.title)
-                                .padding(7)
+                                .padding(10)
                                 .padding(.horizontal, 20)
                                 .foregroundColor(Color.gray.opacity(0.7))
                         }
@@ -61,6 +61,8 @@ struct ContentView: View {
                 
                 
                 
+                //button opens modal, to change into navigation link
+                
                 ScrollView(.vertical) {
                     Section {
                         LazyVGrid(columns: columns,spacing: 20, pinnedViews: .sectionHeaders) {
@@ -86,6 +88,8 @@ struct ContentView: View {
                             .fontWeight(.semibold)
                             .padding(.leading, 20)
                         Spacer()
+                        //plus to change into modal trigger
+                        
                         Image(systemName: "plus")
                             .foregroundColor(.accentColor)
                             .padding(.trailing,20)
