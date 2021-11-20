@@ -136,31 +136,6 @@ struct ContentView: View {
      */
     
     
-    struct routineButton: View {
-        var title: String
-        var icon: String
-        var color: Color
-        
-        @Binding var isShowing : Bool
-        
-        var body: some View {
-            Button {
-                isShowing.toggle()
-            } label: {
-                VStack{
-                    Image(systemName:icon)
-                        .font(.title)
-                        .padding(3)
-                    Text(title)
-                        .font(.title2)
-                }.frame(width: 180, height: 120)
-                    .background(color)
-                    .cornerRadius(18)
-                    .foregroundColor(.white)
-                    .shadow(color: color, radius: 4, y: 2)
-            }
-        }
-    }
     
     
     
