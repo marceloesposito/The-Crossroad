@@ -9,50 +9,92 @@ import Foundation
 import SwiftUI
 
 struct RoutineView: View {
+
     @State private var routineName: String = ""
     @State private var isEditing = false
-    var titolo: String
-    
-    
+    @State var categories: String = "Category"
+    @State var toggleIsOn: Bool = false
+    @State private var repetitionIndex = 0
+    var repetiotions = ["Never", "Every day", "Every week", "Every 2 weeks", "Every month"]
+    let categoryOptions : [String] = ["None", "House", "Nutrition", "Transportation"]
+    var pickerColor: Color = Color.primary
+                                   
+    @Environment(\.presentationMode) var presentationMode
+     
     var body: some View {
-        VStack(alignment: .leading) {
-            Text("New routine")
+    NavigationView {
+        VStack{
+            Text("New Routine")
                 .font(.title)
                 .fontWeight(.bold)
-                .padding()
+        
+        Form {
             TextField(
             "Routine name",
         text: $routineName
             ) { isEditing in
                     self.isEditing = isEditing
                 }
-            Picker(selection: /*@START_MENU_TOKEN@*/.constant(1)/*@END_MENU_TOKEN@*/, label: Text("Category")) {
-                Text("House").tag(1)
-                Text("Nutrition").tag(2)
-                Text("Transportation").tag(3)
+            HStack {
+                Text("Category")
+                Spacer()
+                Picker(
+                    selection: $categories,
+                       label:
+                        HStack {
+                    Text("Category")
+                            Text(categories)
+                }
+                        .font(.headline)
+                        .foregroundColor(.white)
+                        .padding()
+                        .padding(.horizontal)
+                        .cornerRadius(10)
+                        .shadow(color: Color.white.opacity(0.3), radius: 10, x: 0, y: 10)
+                    ,
+                    content: {
+                        ForEach(categoryOptions, id: \.self) {option in
+                            Text(option)
+                                .tag(option)
+                        }
+                    })
+                    .pickerStyle(MenuPickerStyle())
             }
-            Toggle(isOn: /*@START_MENU_TOKEN@*//*@PLACEHOLDER=Is On@*/.constant(true)/*@END_MENU_TOKEN@*/) {
+            Toggle(isOn: $toggleIsOn) {
                 Text("Entire day")
+                
             }
-            DatePicker(selection: .constant(Date()), displayedComponents: DatePickerComponents.hourAndMinute, label: { Text("Start") })
+
+            DatePicker(selection: .constant(Date()), displayedComponents: DatePickerComponents.hourAndMinute, label: { Text("Start")
+            })
+                .disabled(toggleIsOn)
+                .colorMultiply((!toggleIsOn ? pickerColor: Color.gray.opacity(0.2)))
+            
             DatePicker(selection: /*@START_MENU_TOKEN@*/.constant(Date())/*@END_MENU_TOKEN@*/, displayedComponents: DatePickerComponents.hourAndMinute, label: { Text("End") })
+                .disabled(toggleIsOn)
+                .colorMultiply((!toggleIsOn ? pickerColor: Color.gray.opacity(0.2)))
             
             
-                        
+        Picker(selection: $repetitionIndex, label: Text("Repetition")) {
+            ForEach(0 ..< repetiotions.count) {
+                Text(self.repetiotions[$0]).tag($0)
+            }
+            }
+
+
+                
+                
+            }
         }
 
         
-    }
-}
 
-
-
-struct ContentView_Previews: PreviewProvider {
-    static var previews: some View {
-        Group {
-            RoutineView(titolo: "ciao")
-.previewInterfaceOrientation(.portrait)
-          
+        Button("Dismiss Modal") {
+            presentationMode.wrappedValue.dismiss()
+            
+        }
+        Spacer()
+            
         }
     }
 }
