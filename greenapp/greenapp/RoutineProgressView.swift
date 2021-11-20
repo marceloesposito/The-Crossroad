@@ -198,7 +198,7 @@ struct RoutineProgressView: View {
                 
                 Spacer()
             }
-            .navigationBarTitleDisplayMode(.large)
+            
             .navigationTitle(routineName)
             .toolbar {
                 Button {

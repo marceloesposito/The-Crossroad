@@ -49,9 +49,8 @@ struct routineButton: View {
     @Binding var isShowing : Bool
     
     var body: some View {
-        Button {
-            isShowing.toggle()
-        } label: {
+        
+        NavigationLink(destination: RoutineProgressView(routineName: title)) {
             VStack{
                 Image(systemName:icon)
                     .font(.title)
