@@ -24,10 +24,6 @@ struct RoutineView: View {
     var body: some View {
         NavigationView {
             VStack{
-                Text("New Routine")
-                    .font(.title)
-                    .fontWeight(.bold)
-                
                 Form {
                     TextField(
                         "Routine name",
@@ -80,26 +76,17 @@ struct RoutineView: View {
                             Text(self.repetitions[$0]).tag($0)
                         }
                     }
-                    
-                    
-                    
-                    
-                    Button("Dismiss Modal") {
-                        presentationMode.wrappedValue.dismiss()
-                        
-                    }}
-                
-                
+                }
             }
-            
-            
-            
-            Button("Dismiss Modal") {
-                presentationMode.wrappedValue.dismiss()
-                
+            .navigationTitle(Text("New Routine"))
+            .navigationBarTitleDisplayMode(.inline)
+            .toolbar {
+                ToolbarItem(placement: .navigationBarLeading) {
+                        Button("Cancel"){presentationMode.wrappedValue.dismiss()}
+                }
             }
-            
         }
+        
     }
 }
 

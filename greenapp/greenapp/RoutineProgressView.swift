@@ -198,18 +198,18 @@ struct RoutineProgressView: View {
                 
                 Spacer()
             }
-            
             .navigationTitle(routineName)
             .toolbar {
-                Button {
-                    isShowing.toggle()
-                    print(isShowing)
-                } label: {
-                    Text("Edit Routine")
+                ToolbarItem(placement: .navigationBarTrailing) {
+                        Button {
+                        isShowing.toggle()
+                        print(isShowing)
+                    } label: {
+                        Text("Edit Routine")
+                        }
+                    }
                 }
-                
             }
-        }
         }
     }
 }
