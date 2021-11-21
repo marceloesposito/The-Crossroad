@@ -14,7 +14,7 @@ struct RoutineProgressView: View {
     @State var footprintModalShowing: Bool = false
     
     var body: some View {
-        NavigationView{
+        
             ScrollView(.vertical){
             VStack{
                 
@@ -174,12 +174,14 @@ struct RoutineProgressView: View {
                 
                 
 //                importanteee
-//8=================================D
+//                   =================================
                 
                     .frame(width: 414 ,height: 1080)
                 
-                
-//8=================================D
+
+                //                   =================================
+
+
                 
                 
                 .cornerRadius(20)
@@ -210,7 +212,7 @@ struct RoutineProgressView: View {
                     }
                 }
             }
-        }
+        
     }
 }
 

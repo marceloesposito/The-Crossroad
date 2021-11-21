@@ -20,19 +20,6 @@ struct RoutineModel {
     enum rCategory {
         case device, transportation, household, nutrition
     }
-    
-//    switch rCategory {
-//    case .device:
-//        print("device!")
-//    case .transportation:
-//        print("transportation!")
-//    case .household:
-//        print("household!")
-//    case .nutrition:
-//        print("nutrition!")
-//    default:
-//        print("error!")
-//    }
 }
 
 
