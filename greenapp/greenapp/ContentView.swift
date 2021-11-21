@@ -25,20 +25,20 @@ struct ContentView: View {
                 
                 //eco-world
                 ZStack{
-                Image(uiImage:#imageLiteral(resourceName: "Eco-world.png"))
-                    .resizable()
-                    .scaledToFill()
+                    Image(uiImage:#imageLiteral(resourceName: "Eco-world.png"))
+                        .resizable()
+                        .scaledToFill()
                     VStack{
-                    HStack(alignment: .top){
-                        Spacer()
-                        NavigationLink(destination: Text("ciao")) {
-                            Image(systemName: "square.and.arrow.up.circle.fill")
-                                .font(.title)
-                                .padding(10)
-                                .padding(.horizontal, 20)
-                                .foregroundColor(Color.gray.opacity(0.7))
+                        HStack(alignment: .top){
+                            Spacer()
+                            NavigationLink(destination: Text("ciao")) {
+                                Image(systemName: "square.and.arrow.up.circle.fill")
+                                    .font(.title)
+                                    .padding(10)
+                                    .padding(.horizontal, 20)
+                                    .foregroundColor(Color.gray.opacity(0.7))
+                            }
                         }
-                    }
                         Spacer()
                     }
                 }
@@ -89,15 +89,20 @@ struct ContentView: View {
                             .padding(.leading, 20)
                         Spacer()
                         //plus to change into modal trigger
-                        
-                        Image(systemName: "plus")
-                            .foregroundColor(.accentColor)
-                            .padding(.trailing,20)
-                            .font(.title)
+                        Button {
+                            isShowing.toggle()
+                        } label: {
+                            Image(systemName: "plus")
+                                                       .foregroundColor(.accentColor)
+                                                       .padding(.trailing,20)
+                                                       .font(.title)
+                        }
+
+                    
                     }
                     .padding(.bottom, 5)
                 }
-            }
+                }
             }
             
             // navigation bar controls and title
@@ -108,7 +113,7 @@ struct ContentView: View {
             }
         }
         .sheet(isPresented: $isShowing, content: {
-            RoutineView(titolo: "ciao")
+            RoutineView()
         })
     }
     
@@ -136,31 +141,6 @@ struct ContentView: View {
      */
     
     
-    struct routineButton: View {
-        var title: String
-        var icon: String
-        var color: Color
-        
-        @Binding var isShowing : Bool
-        
-        var body: some View {
-            Button {
-                isShowing.toggle()
-            } label: {
-                VStack{
-                    Image(systemName:icon)
-                        .font(.title)
-                        .padding(3)
-                    Text(title)
-                        .font(.title2)
-                }.frame(width: 180, height: 120)
-                    .background(color)
-                    .cornerRadius(18)
-                    .foregroundColor(.white)
-                    .shadow(color: color, radius: 4, y: 2)
-            }
-        }
-    }
     
     
     
@@ -176,7 +156,7 @@ struct ContentView: View {
             Group {
                 ContentView()
                     .previewInterfaceOrientation(.portrait)
-              
+                
             }
         }
     }

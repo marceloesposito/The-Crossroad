@@ -108,7 +108,7 @@ struct RoutineProgressView: View {
                 }
                 
                 HStack{
-                    Text("Learn More")
+                    Text("Did you know?")
                         .font(.title.bold())
                         .padding(.top, 30)
                         .padding(.leading, 20)
@@ -122,15 +122,54 @@ struct RoutineProgressView: View {
                       
                     
                 VStack(){
+                    
+                    HStack {
+                        Text("[Reading time: 20 seconds]")
+                            .padding(.leading,50)
+                            .padding(.top, 20)
+                            .foregroundColor(.white)
+                        Spacer()
+                    }
+                     
                     Text("Top 1% of EU households have carbon footprints 22 times larger than climate targets allow")
                         .font(.system(.title2, design: .rounded))
                         .fontWeight(.bold)
                         .padding(13)
-                        .padding(.top, 10)
                         .foregroundColor(Color.white)
-                    Spacer()
+                    
+                  
+                    
+                    Text("Scientists aren’t certain exactly how much fossil fuel we can use and still remain below 1.5°C – that is, how big the world’s remaining carbon budget is – but it’s clear the vast majority of EU citizens are using far more than their fair share.")
+                        .font(.system(.title3, design: .rounded))
+                        .fontWeight(.semibold)
+                        .padding(.horizontal, 40)
+                        .foregroundColor(Color.white)
                         
-                    }
+                        
+                        
+                    
+                    
+             
+                    
+                    Text("In the EU, the average carbon footprint is equivalent to about eight tonnes of CO₂ per person, which must fall to about a third of that level over the next decade.But some people place even greater pressure on the environment.")
+                        .font(.system(.title3, design: .rounded))
+                        .fontWeight(.semibold)
+                        .padding(.horizontal, 40)
+                        .foregroundColor(Color.white)
+                        .padding(.top, 30)
+                  
+                    
+                    Text("Households in the top 1% of polluters in the EU have carbon footprints that are 22 times larger than the safe limit of 2.5 tonnes. On average, people in this group emit greenhouse gases equivalent to 55 tonnes of CO₂ per person per year.")
+                        .font(.system(.title3, design: .rounded))
+                        .fontWeight(.semibold)
+                        .padding(.horizontal, 40)
+                        .padding(.top, 30)
+                        .foregroundColor(Color.white)
+                    
+                    
+                    Spacer()
+                                    }.padding(.top,20)
+                
                 
                 
                 
@@ -146,12 +185,12 @@ struct RoutineProgressView: View {
                 .cornerRadius(20)
                 .background {
                     ZStack{
-                    Image(uiImage: #imageLiteral (resourceName: "house-learn-more.png.jpg"))
+                    Image(uiImage: #imageLiteral (resourceName: "house-exterior.jpg"))
                         .resizable()
                         .scaledToFill()
                         .frame(height: 1080)
                         
-                        LinearGradient(gradient:Gradient(colors: [Color.black .opacity(0.7), Color.init(red: 0.46, green: 0.75, blue: 1.69).opacity(0)]) , startPoint: .bottom, endPoint: .top)
+                        LinearGradient(gradient:Gradient(colors: [Color.black .opacity(0.7), Color.black.opacity(0.001)]) , startPoint: .top, endPoint: .bottom)
                         
                     }
                 }
@@ -159,7 +198,7 @@ struct RoutineProgressView: View {
                 
                 Spacer()
             }
-            .navigationBarTitleDisplayMode(.large)
+            
             .navigationTitle(routineName)
             .toolbar {
                 Button {
