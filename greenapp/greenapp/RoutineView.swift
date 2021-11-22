@@ -19,6 +19,8 @@ struct RoutineView: View {
     let categoryOptions : [String] = ["None", "House", "Nutrition", "Transportation"]
     var pickerColor: Color = Color.primary
     
+//    @ObservedObject var newRoutine: Routine = Routine()
+    
     @Environment(\.presentationMode) var presentationMode
     
     var body: some View {
@@ -77,26 +79,17 @@ struct RoutineView: View {
                         }
                     }
                     
-                  Section  {
-                        HStack {
-                           
-                        NavigationLink(destination: EcojiView()) {
-                            Text("Ecoji")
-                                .font(.title2)
+                    Section{
+                        NavigationLink(destination: RoutineQuestionnaireView()) {
+                            Label {
+                                Text("Take the questionnaire")
+                            } icon: {
+                                Image(systemName: "pawprint.fill")
+                            }
+
                         }
-                        
                     }
-                        ZStack {
-                            RoundedRectangle(cornerRadius: 20)
-                                .frame(width: 200, height: 150, alignment: .trailing)
-                                .foregroundColor(Color.secondary.opacity(0.3))
-                            Image(systemName: "leaf.fill")
-                                .foregroundColor(.white)
-                                .font(.system(size: 70))
-                        
-                        }
-                        
-                    }
+                    
                 }
                 
                 
@@ -110,8 +103,9 @@ struct RoutineView: View {
                 ToolbarItem(placement: .navigationBarLeading) {
                     Button("Cancel"){presentationMode.wrappedValue.dismiss()}
                 }
+                
                 ToolbarItem(placement: .navigationBarTrailing) {
-                    Button("Done"){presentationMode.wrappedValue.dismiss()}
+                    Button("Done"){print("save function")}
                 }
             }
         }
