@@ -90,7 +90,38 @@ struct RoutineView: View {
                         }
                     }
                     
+                    Section  {
+                        VStack {
+                            NavigationLink(destination: EcojiView()) {
+                                                    Text("Ecoji")
+                                                        .font(.title2)
+                             }
+                            
+                            ZStack {
+                                RoundedRectangle(cornerRadius: 20)
+                                    .frame(width: 200, height: 150, alignment: .center)
+                                    .padding()
+                                    .foregroundColor(Color.secondary.opacity(0.3))
+                                Image(systemName: "leaf.fill")
+                                    .foregroundColor(.white)
+                                    .font(.system(size: 70))
+                            
+                            }
+
+                        }
+            
+                                            
+                                        }
+                                    }
+                                    
+                                    
+                    
                 }
+                
+                
+        
+                
+                
             }
             .navigationTitle(Text("New Routine"))
             .navigationBarTitleDisplayMode(.inline)
@@ -106,7 +137,7 @@ struct RoutineView: View {
         }
         
     }
-}
+
 
 
 struct RoutineView_Previews: PreviewProvider {
