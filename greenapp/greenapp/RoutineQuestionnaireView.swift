@@ -37,9 +37,11 @@ struct RoutineQuestionnaireView: View {
                         Text("Vehicle type")
                     }
                     .labelsHidden()
-                    .pickerStyle(.inline)
+                    .pickerStyle(.menu)
                 }header: {
                     Text("Vehicle type")
+                }footer: {
+                    Text("tap to expand")
                 }
     
                 Section {
@@ -48,19 +50,23 @@ struct RoutineQuestionnaireView: View {
                         ForEach(frequencyOptions, id:\.self){option in
                             Text(option).tag(option)
                                 .foregroundColor(Color.secondary)
+                            
                         }
                     } label: {
                         Text("frequency")
                     }
-                    .pickerStyle(.segmented)
+                    
                     
                 } header: {
                     Text("Recurrency")
+                }footer: {
+                    Text("tap to expand")
                 }
+                .pickerStyle(.menu)
   
                 Section {
-                    Stepper(value: $kilometers, in: 0...100000, step: 100) {
-                        Text("\(kilometers)")
+                    Stepper(value: $kilometers, in: 0...1000, step: 100) {
+                        Text("\(kilometers) km")
                     }
                 } header: {
                     Text("Kilometers travelled")
