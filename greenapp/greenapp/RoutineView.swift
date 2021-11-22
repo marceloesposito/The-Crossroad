@@ -91,13 +91,7 @@ struct RoutineView: View {
                 
                 
             }
-            
-            
-            
-            Button("Dismiss Modal") {
-                presentationMode.wrappedValue.dismiss()
-                
-            }
+
             
         }
     }
