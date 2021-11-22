@@ -78,6 +78,18 @@ struct RoutineView: View {
                             Text(self.repetitions[$0]).tag($0)
                         }
                     }
+                    
+                    Section{
+                        NavigationLink(destination: RoutineQuestionnaireView()) {
+                            Label {
+                                Text("Take the questionnaire")
+                            } icon: {
+                                Image(systemName: "pawprint.fill")
+                            }
+
+                        }
+                    }
+                    
                 }
             }
             .navigationTitle(Text("New Routine"))

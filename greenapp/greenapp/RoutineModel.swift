@@ -16,7 +16,7 @@ class Routine: ObservableObject {
     
     
 
-    func footprintCalculator() -> Int {
+    func footprintCalculator() -> Double {
         return 0
     }
     
@@ -27,6 +27,15 @@ class Routine: ObservableObject {
     
 }
 
+class TransportationRoutine : Routine {
+    @Published var miles: Double = 0.0
+    var co2footprint: Double = 0.0
+    override func footprintCalculator() -> Double {
+        
+        return co2footprint
+    }
+    
+}
 //to implement a list of routines, with at least the four basic routines, custom other routines to be appended -> maybe just an array of routines?
 
 var RoutineStore: [Routine] = []
