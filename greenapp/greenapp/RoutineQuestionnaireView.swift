@@ -67,7 +67,7 @@ struct RoutineQuestionnaireView: View {
                 Section {
                     Stepper(value: $kilometers, in: 0...1000, step: 100) {
                         Text("\(kilometers) km")
-                    }
+                        }
                 } header: {
                     Text("Kilometers travelled")
                 }

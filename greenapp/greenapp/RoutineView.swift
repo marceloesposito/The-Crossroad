@@ -117,12 +117,8 @@ struct RoutineView: View {
                                     
                     
                 }
-                
-                
-        
-                
-                
-            }
+ 
+
             .navigationTitle(Text("New Routine"))
             .navigationBarTitleDisplayMode(.inline)
             .toolbar {
@@ -134,6 +130,7 @@ struct RoutineView: View {
                     Button("Done"){print("save function")}
                 }
             }
+        }
         }
         
     }
