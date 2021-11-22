@@ -80,7 +80,7 @@ struct RoutineView: View {
                     }
                     
                     Section{
-                        NavigationLink(destination: RoutineQuestionnaireView()) {
+                        NavigationLink(destination: transportationRoutineQuestionnaireView()) {
                             Label {
                                 Text("Take the questionnaire")
                             } icon: {

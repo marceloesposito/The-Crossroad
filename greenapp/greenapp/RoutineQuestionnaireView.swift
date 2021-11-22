@@ -7,7 +7,7 @@
 
 import SwiftUI
 
-struct RoutineQuestionnaireView: View {
+struct transportationRoutineQuestionnaireView: View {
     
     @State var kilometers: Int = 0
     @State var vehicleType: String = ""
@@ -93,6 +93,6 @@ struct RoutineQuestionnaireView: View {
 
 struct RoutineQuestionnaireView_Previews: PreviewProvider {
     static var previews: some View {
-        RoutineQuestionnaireView()
+        transportationRoutineQuestionnaireView()
     }
 }
