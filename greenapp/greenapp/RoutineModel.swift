@@ -5,26 +5,40 @@
 //  Created by Marcelo Esposito on 20/11/21.
 //
 
-import Foundation
 import SwiftUI
 
 
-struct RoutineModel {
-    var allDay : Bool = false
-    var routineName: String
-    var routineCategory: String
-    
-    
-//to add an enum or a switch to implement different methods per each routine category
 
-    enum rCategory {
-        case device, transportation, household, nutrition
+class Routine: ObservableObject {
+    
+    @Published var routineTitle: String = ""
+    @Published var routineCategory : String = ""
+    
+    
+
+    func footprintCalculator() -> Double {
+        return 0
     }
+    
+    init(name: String, category: String){
+        self.routineTitle = name
+        self.routineCategory = category
+    }
+    
 }
 
-
+class TransportationRoutine : Routine {
+    @Published var miles: Double = 0.0
+    var co2footprint: Double = 0.0
+    override func footprintCalculator() -> Double {
+        
+        return co2footprint
+    }
+    
+}
 //to implement a list of routines, with at least the four basic routines, custom other routines to be appended -> maybe just an array of routines?
 
+var RoutineStore: [Routine] = []
 
 
 

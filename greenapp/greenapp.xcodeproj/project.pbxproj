@@ -8,6 +8,8 @@
 
 /* Begin PBXBuildFile section */
 		5B08D051274938F800E0851C /* RoutineModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B08D050274938F800E0851C /* RoutineModel.swift */; };
+		5B08D053274BC4FC00E0851C /* FootprintAlertView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B08D052274BC4FC00E0851C /* FootprintAlertView.swift */; };
+		5B08D055274BE24000E0851C /* RoutineQuestionnaireView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B08D054274BE24000E0851C /* RoutineQuestionnaireView.swift */; };
 		5B7C3FD42747DC3A0081E99C /* RoutineProgressView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B7C3FD32747DC3A0081E99C /* RoutineProgressView.swift */; };
 		5BBF035A274442B900E7F387 /* RoutineView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5BBF0359274442B900E7F387 /* RoutineView.swift */; };
 		5BD40AB0274414E100CC6986 /* greenappApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5BD40AAF274414E100CC6986 /* greenappApp.swift */; };
@@ -20,6 +22,8 @@
 
 /* Begin PBXFileReference section */
 		5B08D050274938F800E0851C /* RoutineModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RoutineModel.swift; sourceTree = "<group>"; };
+		5B08D052274BC4FC00E0851C /* FootprintAlertView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FootprintAlertView.swift; sourceTree = "<group>"; };
+		5B08D054274BE24000E0851C /* RoutineQuestionnaireView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RoutineQuestionnaireView.swift; sourceTree = "<group>"; };
 		5B7C3FD32747DC3A0081E99C /* RoutineProgressView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RoutineProgressView.swift; sourceTree = "<group>"; };
 		5BBF0359274442B900E7F387 /* RoutineView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RoutineView.swift; sourceTree = "<group>"; };
 		5BD40AAC274414E100CC6986 /* greenapp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = greenapp.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -68,6 +72,8 @@
 				5B08D050274938F800E0851C /* RoutineModel.swift */,
 				5B7C3FD32747DC3A0081E99C /* RoutineProgressView.swift */,
 				7754DFB527480EF1008793BE /* EcojiView.swift */,
+				5B08D052274BC4FC00E0851C /* FootprintAlertView.swift */,
+				5B08D054274BE24000E0851C /* RoutineQuestionnaireView.swift */,
 				5BD40AB3274414E200CC6986 /* Assets.xcassets */,
 				5BD40AB5274414E200CC6986 /* Preview Content */,
 			);
@@ -155,8 +161,10 @@
 				5BBF035A274442B900E7F387 /* RoutineView.swift in Sources */,
 				7754DFB627480EF1008793BE /* EcojiView.swift in Sources */,
 				5BD40AB2274414E100CC6986 /* ContentView.swift in Sources */,
+				5B08D053274BC4FC00E0851C /* FootprintAlertView.swift in Sources */,
 				5B7C3FD42747DC3A0081E99C /* RoutineProgressView.swift in Sources */,
 				5B08D051274938F800E0851C /* RoutineModel.swift in Sources */,
+				5B08D055274BE24000E0851C /* RoutineQuestionnaireView.swift in Sources */,
 				7754DFB227480D84008793BE /* InfographicView.swift in Sources */,
 				5BD40AB0274414E100CC6986 /* greenappApp.swift in Sources */,
 			);

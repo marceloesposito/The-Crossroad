@@ -8,11 +8,9 @@
 import SwiftUI
 
 struct RoutineProgressView: View {
-    
     var routineName: String
     @State var isShowing: Bool = false
     @State var footprintModalShowing: Bool = false
-    
     var body: some View {
         
             ScrollView(.vertical){
