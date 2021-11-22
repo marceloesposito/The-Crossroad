@@ -126,12 +126,8 @@ struct RoutineView: View {
                                     
                     
                 }
-                
-                
-        
-                
-                
-            
+ 
+
             .navigationTitle(Text("New Routine"))
             .navigationBarTitleDisplayMode(.inline)
             .toolbar {

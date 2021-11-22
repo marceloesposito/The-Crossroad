@@ -52,9 +52,9 @@ struct ContentView: View {
                             Color.yellow
                         }.cornerRadius(18)
                         .shadow(radius: 4, y: 2)
-                }.padding(.vertical, 15)
+                }.padding(.vertical, 10)
                 
-                
+                Divider()
                 
                 
                 //button opens modal, to change into navigation link
@@ -66,7 +66,7 @@ struct ContentView: View {
                             routineButton(title: "House", icon: "house.fill", color: Color.green, isShowing: $isShowing)
                             routineButton(title: "Device", icon: "iphone.homebutton", color: Color.purple, isShowing: $isShowing)
                             routineButton(title: "Nutrition", icon: "leaf.fill", color: Color.teal, isShowing: $isShowing)
-                            routineButton(title: "custom 1", icon: "abc", color: .orange, isShowing: $isShowing)
+                            addRoutineButton(title: "Add Routine", icon: "plus.circle.fill", color: .orange, isShowing: $isShowing)
                             
                         }
                         .padding(.horizontal, 10)
@@ -79,21 +79,15 @@ struct ContentView: View {
                     
                 header:{
                     HStack{
+                        Image(systemName: "list.bullet.rectangle.portrait")
+                            .padding(.leading, 20)
+                            .font(.title2)
+
                         Text("My Routines")
                             .font(.title2)
                             .fontWeight(.semibold)
-                            .padding(.leading, 20)
+                            
                         Spacer()
-                        //plus to change into modal trigger
-                        Button {
-                            isShowing.toggle()
-                        } label: {
-                            Image(systemName: "plus")
-                                                       .foregroundColor(.accentColor)
-                                                       .padding(.trailing,20)
-                                                       .font(.title)
-                        }
-
                     
                     }
                     .padding(.bottom, 5)
