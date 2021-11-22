@@ -23,9 +23,7 @@ struct ContentView: View {
                 
                 //eco-world
                 ZStack{
-                    Image(uiImage:#imageLiteral(resourceName: "Eco-world.png"))
-                        .resizable()
-                        .scaledToFill()
+                    EcoWorld()
                     VStack{
                         HStack(alignment: .top){
                             Spacer()
@@ -157,5 +155,13 @@ struct ContentView: View {
                 
             }
         }
+    }
+}
+
+struct EcoWorld: View {
+    var body: some View {
+        Image(uiImage:#imageLiteral(resourceName: "Eco-world.png"))
+            .resizable()
+            .scaledToFill()
     }
 }

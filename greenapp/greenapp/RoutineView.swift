@@ -19,6 +19,8 @@ struct RoutineView: View {
     let categoryOptions : [String] = ["None", "House", "Nutrition", "Transportation"]
     var pickerColor: Color = Color.primary
     
+//    @ObservedObject var newRoutine: Routine = Routine()
+    
     @Environment(\.presentationMode) var presentationMode
     
     var body: some View {
@@ -66,7 +68,7 @@ struct RoutineView: View {
                         .disabled(toggleIsOn)
                         .colorMultiply((!toggleIsOn ? pickerColor: Color.gray.opacity(0.2)))
                     
-                    DatePicker(selection: /*@START_MENU_TOKEN@*/.constant(Date())/*@END_MENU_TOKEN@*/, displayedComponents: DatePickerComponents.hourAndMinute, label: { Text("End") })
+                    DatePicker(selection: .constant(Date()), displayedComponents: DatePickerComponents.hourAndMinute, label: { Text("End") })
                         .disabled(toggleIsOn)
                         .colorMultiply((!toggleIsOn ? pickerColor: Color.gray.opacity(0.2)))
                     
@@ -82,7 +84,11 @@ struct RoutineView: View {
             .navigationBarTitleDisplayMode(.inline)
             .toolbar {
                 ToolbarItem(placement: .navigationBarLeading) {
-                        Button("Cancel"){presentationMode.wrappedValue.dismiss()}
+                    Button("Cancel"){presentationMode.wrappedValue.dismiss()}
+                }
+                
+                ToolbarItem(placement: .navigationBarTrailing) {
+                    Button("Done"){print("save function")}
                 }
             }
         }
