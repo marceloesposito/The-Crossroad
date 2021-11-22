@@ -25,10 +25,13 @@ struct transportationRoutineQuestionnaireView: View {
     "Airplane"
     ]
     
+   
+    
     var body: some View {
         
         
         VStack{
+            
             Form{
                 Section{
                     Picker(selection: $vehicleType) {
@@ -37,11 +40,9 @@ struct transportationRoutineQuestionnaireView: View {
                         Text("Vehicle type")
                     }
                     .labelsHidden()
-                    .pickerStyle(.menu)
+                    .pickerStyle(.inline)
                 }header: {
                     Text("Vehicle type")
-                }footer: {
-                    Text("tap to expand")
                 }
     
                 Section {
@@ -49,7 +50,7 @@ struct transportationRoutineQuestionnaireView: View {
                     Picker(selection: $frequency) {
                         ForEach(frequencyOptions, id:\.self){option in
                             Text(option).tag(option)
-                                .foregroundColor(Color.secondary)
+                    
                             
                         }
                     } label: {
@@ -59,10 +60,9 @@ struct transportationRoutineQuestionnaireView: View {
                     
                 } header: {
                     Text("Recurrency")
-                }footer: {
-                    Text("tap to expand")
                 }
-                .pickerStyle(.menu)
+                .labelsHidden()
+                .pickerStyle(.inline)
   
                 Section {
                     Stepper(value: $kilometers, in: 0...1000, step: 100) {
@@ -84,10 +84,19 @@ struct transportationRoutineQuestionnaireView: View {
                 } header: {
                     Text("Your Footprint")
                 }
+                
+            }
+            
+        }
 
+        .toolbar {
+            ToolbarItem(placement: .navigationBarTrailing) {
+                Button("Done") {
+                    print("save function")
+                
             }
         }
-        
+        }
     }
 }
 

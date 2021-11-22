@@ -14,7 +14,7 @@ class Routine: ObservableObject {
     @Published var routineTitle: String = ""
     @Published var routineCategory : String = ""
     
-    
+    var co2footprint: Double = 0.0
 
     func footprintCalculator() -> Double {
         return 0
@@ -29,12 +29,20 @@ class Routine: ObservableObject {
 
 class TransportationRoutine : Routine {
     @Published var miles: Double = 0.0
-    var co2footprint: Double = 0.0
+    
+    enum typeOfVehicle{
+        case car
+        case train
+        case bus
+        case airplane
+    }
+    var vehicle = typeOfVehicle.car
+
     override func footprintCalculator() -> Double {
         
         return co2footprint
     }
-    
+
 }
 //to implement a list of routines, with at least the four basic routines, custom other routines to be appended -> maybe just an array of routines?
 
