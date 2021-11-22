@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		2FEC06DE274BD7FC00EDDA3E /* RoutineTransportation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2FEC06DD274BD7FC00EDDA3E /* RoutineTransportation.swift */; };
 		5B08D051274938F800E0851C /* RoutineModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B08D050274938F800E0851C /* RoutineModel.swift */; };
 		5B7C3FD42747DC3A0081E99C /* RoutineProgressView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B7C3FD32747DC3A0081E99C /* RoutineProgressView.swift */; };
 		5BBF035A274442B900E7F387 /* RoutineView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5BBF0359274442B900E7F387 /* RoutineView.swift */; };
@@ -19,6 +20,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		2FEC06DD274BD7FC00EDDA3E /* RoutineTransportation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RoutineTransportation.swift; sourceTree = "<group>"; };
 		5B08D050274938F800E0851C /* RoutineModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RoutineModel.swift; sourceTree = "<group>"; };
 		5B7C3FD32747DC3A0081E99C /* RoutineProgressView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RoutineProgressView.swift; sourceTree = "<group>"; };
 		5BBF0359274442B900E7F387 /* RoutineView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RoutineView.swift; sourceTree = "<group>"; };
@@ -65,6 +67,7 @@
 				7754DFB127480D84008793BE /* InfographicView.swift */,
 				5BD40AB1274414E100CC6986 /* ContentView.swift */,
 				5BBF0359274442B900E7F387 /* RoutineView.swift */,
+				2FEC06DD274BD7FC00EDDA3E /* RoutineTransportation.swift */,
 				5B08D050274938F800E0851C /* RoutineModel.swift */,
 				5B7C3FD32747DC3A0081E99C /* RoutineProgressView.swift */,
 				7754DFB527480EF1008793BE /* EcojiView.swift */,
@@ -156,6 +159,7 @@
 				7754DFB627480EF1008793BE /* EcojiView.swift in Sources */,
 				5BD40AB2274414E100CC6986 /* ContentView.swift in Sources */,
 				5B7C3FD42747DC3A0081E99C /* RoutineProgressView.swift in Sources */,
+				2FEC06DE274BD7FC00EDDA3E /* RoutineTransportation.swift in Sources */,
 				5B08D051274938F800E0851C /* RoutineModel.swift in Sources */,
 				7754DFB227480D84008793BE /* InfographicView.swift in Sources */,
 				5BD40AB0274414E100CC6986 /* greenappApp.swift in Sources */,
