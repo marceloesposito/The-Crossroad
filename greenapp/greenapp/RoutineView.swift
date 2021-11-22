@@ -92,10 +92,17 @@ struct RoutineView: View {
                     
                     Section  {
                         VStack {
-                            NavigationLink(destination: EcojiView()) {
-                                                    Text("Ecoji")
-                                                        .font(.title2)
-                             }
+                            HStack {
+                                Text("Ecoji")
+                                    .font(.title2)
+                                
+                                Spacer()
+                                
+                                Button(action: /*@START_MENU_TOKEN@*/{}/*@END_MENU_TOKEN@*/) {
+                                    Image(systemName: "info.circle")
+                                }
+                            }
+                                
                             
                             ZStack {
                                 RoundedRectangle(cornerRadius: 20)
@@ -107,6 +114,8 @@ struct RoutineView: View {
                                     .font(.system(size: 70))
                             
                             }
+                            Text("Add a category to view its associated ecoji")
+                                .foregroundColor(.gray)
 
                         }
             
@@ -129,8 +138,8 @@ struct RoutineView: View {
                 ToolbarItem(placement: .navigationBarTrailing) {
                     Button("Done"){print("save function")}
                 }
+                }
             }
-        }
         }
         
     }
