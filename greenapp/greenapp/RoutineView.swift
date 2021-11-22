@@ -66,7 +66,7 @@ struct RoutineView: View {
                         .disabled(toggleIsOn)
                         .colorMultiply((!toggleIsOn ? pickerColor: Color.gray.opacity(0.2)))
                     
-                    DatePicker(selection: /*@START_MENU_TOKEN@*/.constant(Date())/*@END_MENU_TOKEN@*/, displayedComponents: DatePickerComponents.hourAndMinute, label: { Text("End") })
+                    DatePicker(selection: .constant(Date()), displayedComponents: DatePickerComponents.hourAndMinute, label: { Text("End") })
                         .disabled(toggleIsOn)
                         .colorMultiply((!toggleIsOn ? pickerColor: Color.gray.opacity(0.2)))
                     
@@ -76,13 +76,42 @@ struct RoutineView: View {
                             Text(self.repetitions[$0]).tag($0)
                         }
                     }
+                    
+                  Section  {
+                        HStack {
+                           
+                        NavigationLink(destination: EcojiView()) {
+                            Text("Ecoji")
+                                .font(.title2)
+                        }
+                        
+                    }
+                        ZStack {
+                            RoundedRectangle(cornerRadius: 20)
+                                .frame(width: 200, height: 150, alignment: .trailing)
+                                .foregroundColor(Color.secondary.opacity(0.3))
+                            Image(systemName: "leaf.fill")
+                                .foregroundColor(.white)
+                                .font(.system(size: 70))
+                        
+                        }
+                        
+                    }
                 }
+                
+                
+        
+                
+                
             }
             .navigationTitle(Text("New Routine"))
             .navigationBarTitleDisplayMode(.inline)
             .toolbar {
                 ToolbarItem(placement: .navigationBarLeading) {
-                        Button("Cancel"){presentationMode.wrappedValue.dismiss()}
+                    Button("Cancel"){presentationMode.wrappedValue.dismiss()}
+                }
+                ToolbarItem(placement: .navigationBarTrailing) {
+                    Button("Done"){presentationMode.wrappedValue.dismiss()}
                 }
             }
         }
