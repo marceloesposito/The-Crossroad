@@ -16,9 +16,7 @@ struct ContentView: View {
             GridItem(spacing:10),
             GridItem(spacing:10),
         ]
-        
-        
-        
+    
         
         NavigationView{
             VStack{
