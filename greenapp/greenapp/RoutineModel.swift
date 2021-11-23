@@ -15,7 +15,7 @@ class Routine: ObservableObject {
     @Published var routineCategory : String = ""
     
     var co2footprint: Double = 0.0
-
+    
     func footprintCalculator() -> Double {
         return 0
     }
@@ -37,10 +37,22 @@ class HouseRoutine: Routine{
         return co2footprint
     }
     
+    init(name: String, category: String, family: Double, energy: Double) {
+        super.init(name: name, category: category)
+        self.familyMembers = family
+        self.energyConsumption = energy
+    }
 }
 
+
 class TransportationRoutine : Routine {
-    @Published var miles: Double = 0.0
+    @Published var kilometers: Double = 0.0
+    @Published var fuelConsumptionOn100K: Double = 0
+    @Published var vehicle = typeOfVehicle.car
+    @Published var passengers: Double = 0.0
+    let fuelCombustionCoefficient: Double = 2.33
+    let fuelProductionCoefficient: Double = 0.43
+    let carManufacturingConstant: Double = 32
     
     enum typeOfVehicle{
         case car
@@ -48,13 +60,23 @@ class TransportationRoutine : Routine {
         case bus
         case airplane
     }
-    var vehicle = typeOfVehicle.car
-
     override func footprintCalculator() -> Double {
         
+        switch vehicle {
+        case .car:
+            co2footprint = ((((fuelCombustionCoefficient*fuelConsumptionOn100K)/100)+(fuelProductionCoefficient*fuelConsumptionOn100K)/100)+(32*kilometers))/passengers
+        case .train:
+            co2footprint = (kilometers*42)
+        case .bus:
+            co2footprint = (kilometers*36)
+        case .airplane:
+            co2footprint = (kilometers*141)
+        }
         return co2footprint
     }
-
+    
+    
+    
 }
 //to implement a list of routines, with at least the four basic routines, custom other routines to be appended -> maybe just an array of routines?
 
@@ -66,7 +88,7 @@ struct HouseRoutineButton: View {
     var title: String
     var icon: String
     var color: Color
-//    var destinationView: AnyView = AnyView(TranspProgressView(routineName: "My Car"))
+    //    var destinationView: AnyView = AnyView(TranspProgressView(routineName: "My Car"))
     
     @Binding var isShowing : Bool
     
@@ -92,7 +114,7 @@ struct TransportationRoutineButton: View {
     var title: String
     var icon: String
     var color: Color
-//    var destinationView: AnyView = AnyView(TranspProgressView(routineName: "My Car"))
+    //    var destinationView: AnyView = AnyView(TranspProgressView(routineName: "My Car"))
     
     @Binding var isShowing : Bool
     
