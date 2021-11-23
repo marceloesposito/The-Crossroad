@@ -62,16 +62,17 @@ var RoutineStore: [Routine] = []
 
 
 
-struct routineButton: View {
+struct HouseRoutineButton: View {
     var title: String
     var icon: String
     var color: Color
+//    var destinationView: AnyView = AnyView(TranspProgressView(routineName: "My Car"))
     
     @Binding var isShowing : Bool
     
     var body: some View {
         
-        NavigationLink(destination: RoutineProgressView(routineName: title)) {
+        NavigationLink(destination: RoutineProgressView(routineName: "My House")) {
             VStack{
                 Image(systemName:icon)
                     .font(.title)
@@ -87,6 +88,31 @@ struct routineButton: View {
     }
 }
 
+struct TransportationRoutineButton: View {
+    var title: String
+    var icon: String
+    var color: Color
+//    var destinationView: AnyView = AnyView(TranspProgressView(routineName: "My Car"))
+    
+    @Binding var isShowing : Bool
+    
+    var body: some View {
+        
+        NavigationLink(destination: TranspProgressView(routineName: "My Car")) {
+            VStack{
+                Image(systemName:icon)
+                    .font(.title)
+                    .padding(3)
+                Text(title)
+                    .font(.title2)
+            }.frame(width: 180, height: 120)
+                .background(color)
+                .cornerRadius(18)
+                .foregroundColor(.white)
+                .shadow(color: color, radius: 4, y: 2)
+        }
+    }
+}
 
 struct addRoutineButton: View {
     var title: String
