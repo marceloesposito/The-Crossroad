@@ -40,7 +40,7 @@ struct ContentView: View {
                 }
                 
                 NavigationLink {
-                    Text("ciao")
+                    OverallProgressView(routineName: "Overall Progress")
                 } label: {
                     Text("Overall Progress")
                         .foregroundColor(Color.white)
