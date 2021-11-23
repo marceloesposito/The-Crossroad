@@ -10,8 +10,9 @@ import SwiftUI
 struct PropicModal: View {
     
     @State var username: String = ""
-    
 
+    
+    @Environment(\.presentationMode) var presentationMode
     
     var body: some View {
         
@@ -26,7 +27,7 @@ struct PropicModal: View {
         
         Form{
             Section {
-             TextField("insert username", text: $username)
+             TextField("Insert Username", text: $username)
             } header: {
                 Text("username")
             }
@@ -108,10 +109,29 @@ struct PropicModal: View {
       
                     }
                     .padding(.bottom, 30)
+                    
+                
                 }
             } header: {
                 Text("User avatar")
             }
+            
+                HStack{
+                    Spacer()
+                Button {
+                    presentationMode.wrappedValue.dismiss()
+
+                } label: {
+                    Text("Submit Selection")
+                        .foregroundColor(.white)
+                        .padding(30)
+                        .padding(.horizontal,60)
+                        .background(Color.accentColor)
+                        .cornerRadius(18)
+                }
+Spacer()
+                }
+            
         }
 //        .toolbar {
 //            ToolbarItem(placement: .navigationBarTrailing) {
@@ -123,6 +143,6 @@ struct PropicModal: View {
 
 struct PropicModal_Previews: PreviewProvider {
     static var previews: some View {
-        PropicModal()
+       ContentView()
     }
 }

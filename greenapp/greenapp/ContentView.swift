@@ -10,6 +10,7 @@ import SwiftUI
 struct ContentView: View {
     
     @State var isShowing: Bool = false
+    @State var propicModalShowing: Bool = false
     
     var body: some View {
         let columns: [GridItem] = [
@@ -98,10 +99,17 @@ struct ContentView: View {
             // navigation bar controls and title
             .navigationTitle("Greenapp")
             .toolbar {
-                NavigationLink(destination:ProfileView()) {
-                    Image(systemName: "person.circle.fill").foregroundColor(.accentColor).font(.title)}
+                Button {
+                    propicModalShowing.toggle()
+                } label: {
+                    Image(systemName: "person.circle.fill")
+                        .font(.title)
+                }
+
             }
-        }
+        }.popover(isPresented: $propicModalShowing, content: {
+            PropicModal()
+        })
         .sheet(isPresented: $isShowing, content: {
             RoutineView()
         })
