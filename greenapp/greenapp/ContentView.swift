@@ -98,7 +98,7 @@ struct ContentView: View {
             // navigation bar controls and title
             .navigationTitle("Greenapp")
             .toolbar {
-                NavigationLink(destination:  ) {
+                NavigationLink(destination: Text ("Pla")) {
                     Image(systemName: "person.circle.fill").foregroundColor(.accentColor).font(.title)}
             }
         }
