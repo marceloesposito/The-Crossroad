@@ -19,6 +19,7 @@
 		5BD40AB7274414E200CC6986 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 5BD40AB6274414E200CC6986 /* Preview Assets.xcassets */; };
 		7754DFB227480D84008793BE /* InfographicView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7754DFB127480D84008793BE /* InfographicView.swift */; };
 		7754DFB627480EF1008793BE /* EcojiView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7754DFB527480EF1008793BE /* EcojiView.swift */; };
+		B188C77E274D349100353638 /* ProfileView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B188C77D274D349100353638 /* ProfileView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -35,6 +36,7 @@
 		5BD40AB6274414E200CC6986 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 		7754DFB127480D84008793BE /* InfographicView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InfographicView.swift; sourceTree = "<group>"; };
 		7754DFB527480EF1008793BE /* EcojiView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EcojiView.swift; sourceTree = "<group>"; };
+		B188C77D274D349100353638 /* ProfileView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -67,6 +69,7 @@
 		5BD40AAE274414E100CC6986 /* greenapp */ = {
 			isa = PBXGroup;
 			children = (
+				B188C77D274D349100353638 /* ProfileView.swift */,
 				5BD40AAF274414E100CC6986 /* greenappApp.swift */,
 				7754DFB127480D84008793BE /* InfographicView.swift */,
 				5BD40AB1274414E100CC6986 /* ContentView.swift */,
@@ -170,6 +173,7 @@
 				5B08D051274938F800E0851C /* RoutineModel.swift in Sources */,
 				5B08D055274BE24000E0851C /* RoutineQuestionnaireView.swift in Sources */,
 				7754DFB227480D84008793BE /* InfographicView.swift in Sources */,
+				B188C77E274D349100353638 /* ProfileView.swift in Sources */,
 				5BD40AB0274414E100CC6986 /* greenappApp.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
