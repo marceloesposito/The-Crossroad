@@ -27,6 +27,18 @@ class Routine: ObservableObject {
     
 }
 
+class HouseRoutine: Routine{
+    var familyMembers: Double = 0
+    var energyConsumption: Double = 0.0
+    let emissionsFactor: Double = 256.2
+    
+    override func footprintCalculator() -> Double {
+        co2footprint = (energyConsumption*emissionsFactor)/familyMembers
+        return co2footprint
+    }
+    
+}
+
 class TransportationRoutine : Routine {
     @Published var miles: Double = 0.0
     

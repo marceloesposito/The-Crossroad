@@ -7,23 +7,47 @@
 
 import SwiftUI
 
+
+
 struct transportationRoutineQuestionnaireView: View {
     
     @State var kilometers: Int = 0
     @State var vehicleType: String = ""
     @State var frequency: String = ""
-    let frequencyOptions: [String] = [
-        "Yearly",
-    "Monthly",
-    "Weekly",
-    "Daily"
-    ]
-    let vehicleOptions: [String] = [
-    "Car",
-    "Train",
-    "Bus",
-    "Airplane"
-    ]
+    
+    
+    enum frequencyOptions: String, CaseIterable{
+        case yearly = "Yearly"
+        case monthly = "Monthly"
+        case weekly = "Weekly"
+        case daily = "Daily"
+    }
+    var stepperValue: Int = 100
+
+//    func getStepperValue (frequency: frequencyOptions){
+//        switch frequency {
+//        case .yearly:
+//            stepperValue = 500
+//        case .monthly:
+//            stepperValue = 200
+//        case .weekly:
+//            stepperValue = 100
+//        case .daily:
+//            stepperValue = 10
+//        }
+//    }
+    
+    @State private var frequencyOption: frequencyOptions = .daily
+    
+
+    
+    enum vehicleOptions: String, CaseIterable{
+        case car = "Car"
+        case train = "Train"
+        case bus = "Bus"
+        case airplane = "Airplane"
+    }
+    @State private var vehicleOption: vehicleOptions = .car
     
    
     
@@ -34,28 +58,37 @@ struct transportationRoutineQuestionnaireView: View {
             
             Form{
                 Section{
-                    Picker(selection: $vehicleType) {
-                        ForEach(vehicleOptions, id:\.self){option in Text(option).tag(option)}
-                    } label: {
-                        Text("Vehicle type")
-                    }
-                    .labelsHidden()
-                    .pickerStyle(.inline)
+                    
+                        Picker(selection: $vehicleOption) {
+                            ForEach(vehicleOptions.allCases, id:\.self){vehicles in
+                                Text(vehicles.rawValue)
+                            }
+                        } label: {
+                            Text("Vehicle type")
+                        }
+                        .labelsHidden()
+                        .pickerStyle(.inline)
+                    
+                    
                 }header: {
                     Text("Vehicle type")
                 }
     
                 Section {
-                    
-                    Picker(selection: $frequency) {
-                        ForEach(frequencyOptions, id:\.self){option in
-                            Text(option).tag(option)
-                    
-                            
+                    DisclosureGroup(content: {
+                        Picker(selection: $frequencyOption) {
+                            ForEach(frequencyOptions.allCases, id:\.self){option in
+                                Text(option.rawValue)
+                            }
+                        } label: {
+                            Text("frequency")
                         }
-                    } label: {
-                        Text("frequency")
-                    }
+                    }, label: {
+                        Text("\(frequencyOption.rawValue)")
+                    })
+                        
+                    
+                    
                     
                     
                 } header: {
@@ -63,9 +96,10 @@ struct transportationRoutineQuestionnaireView: View {
                 }
                 .labelsHidden()
                 .pickerStyle(.inline)
-  
+
+                
                 Section {
-                    Stepper(value: $kilometers, in: 0...1000, step: 100) {
+                    Stepper(value: $kilometers, in: 0...1000, step: stepperValue) {
                         Text("\(kilometers) km")
                         }
                 } header: {
@@ -97,6 +131,8 @@ struct transportationRoutineQuestionnaireView: View {
             }
         }
         }
+        
+        
     }
 }
 
