@@ -12,7 +12,7 @@ struct RoutineProgressView: View {
     @State var isShowing: Bool = false
     @State var footprintModalShowing: Bool = false
     var body: some View {
-        
+        ZStack{
             ScrollView(.vertical){
             VStack{
                 
@@ -42,9 +42,7 @@ struct RoutineProgressView: View {
                         
                         ExtractedView(mainInfo: "50gCO2eq", subInfo: "less emitted",
                                       backgroundColor: Color.green,footprintModalShowing: $footprintModalShowing)
-                            .popover(isPresented: $footprintModalShowing) {
-                                ZStack{}
-                            }
+
                    
                         ExtractedView(mainInfo: "2400 liters", subInfo: "less wasted water",
                                       backgroundColor: Color.purple,footprintModalShowing: $footprintModalShowing)
@@ -84,7 +82,13 @@ struct RoutineProgressView: View {
                     }
                 }
             }
+            
+//            FootprintAlertView(footprintModalShowing: $footprintModalShowing)
+            
+            
+        }
     }
+        
 }
 
 struct RoutineProgressView_Previews: PreviewProvider {

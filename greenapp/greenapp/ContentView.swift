@@ -62,10 +62,10 @@ struct ContentView: View {
                 ScrollView(.vertical) {
                     Section {
                         LazyVGrid(columns: columns,spacing: 20, pinnedViews: .sectionHeaders) {
-                            routineButton(title: "Transportation", icon: "car.fill", color: Color.red, isShowing: $isShowing)
-                            routineButton(title: "House", icon: "house.fill", color: Color.green, isShowing: $isShowing)
-                            routineButton(title: "Device", icon: "iphone.homebutton", color: Color.purple, isShowing: $isShowing)
-                            routineButton(title: "Nutrition", icon: "leaf.fill", color: Color.teal, isShowing: $isShowing)
+                            TransportationRoutineButton(title: "Transportation", icon: "car.fill", color: Color.red, isShowing: $isShowing)
+                            HouseRoutineButton(title: "House", icon: "house.fill", color: Color.green, isShowing: $isShowing)
+                            HouseRoutineButton(title: "Device", icon: "iphone.homebutton", color: Color.purple, isShowing: $isShowing)
+                            TransportationRoutineButton(title: "Nutrition", icon: "leaf.fill", color: Color.teal, isShowing: $isShowing)
                             addRoutineButton(title: "Add Routine", icon: "plus.circle.fill", color: .orange, isShowing: $isShowing)
                             
                         }
