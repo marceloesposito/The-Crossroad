@@ -103,9 +103,7 @@ struct ExtractedView: View {
     var backgroundColor: Color
     @Binding var footprintModalShowing: Bool
     var body: some View {
-        Button {
-            footprintModalShowing.toggle()
-        } label: {
+        
             VStack{
                 Text(mainInfo)
                     .font(.system(.title2, design: .rounded))
@@ -119,8 +117,7 @@ struct ExtractedView: View {
                 .background(backgroundColor)
                 .cornerRadius(18)
                 .padding(5)
-                .shadow(color: backgroundColor, radius: 4, y: 2)
-        }
+                
     }
 }
 

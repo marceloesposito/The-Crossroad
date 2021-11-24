@@ -11,6 +11,7 @@ struct PropicModal: View {
     
     @State var username: String = ""
 
+    @State var profileIcon: String = ""
     
     @Environment(\.presentationMode) var presentationMode
     
@@ -23,25 +24,39 @@ struct PropicModal: View {
         ]
         
         
-        
+        VStack{
         
         Form{
+            
+            
             Section {
+                
              TextField("Insert Username", text: $username)
             } header: {
                 Text("username")
             }
+            
+            
             Section{
+                
                 VStack{
+                    
+                    
                     HStack {
                         Spacer()
                         Text("Choose your Avatar")
                         Spacer()
                     }
+                    
+                    
+                    
+                    
                     LazyVGrid(columns: columns, spacing: 40) {
                         
         // icon 1
-                        Button(action: {}) {
+                        Button(action: {
+                            profileIcon = "elefanteTesta"
+                        }) {
                         Image("elefanteTesta")
                             .resizable()
                             .scaledToFit()
@@ -52,7 +67,9 @@ struct PropicModal: View {
                         
                         //icon 2
                         
-                        Button(action: {}) {
+                        Button(action: {
+                            profileIcon = "volpeTesta"
+                        }) {
                             Image("volpeTesta")
                                 .resizable()
                                 .scaledToFit()
@@ -63,7 +80,9 @@ struct PropicModal: View {
                         
                         //icon 3
                         
-                        Button(action: {}) {
+                        Button(action: {
+                            profileIcon = "ippopotamoTesta"
+                        }) {
                                 Image("ippopotamoTesta")
                                     .resizable()
                                     .scaledToFit()
@@ -74,7 +93,9 @@ struct PropicModal: View {
                         
                         //icon 4
                         
-                        Button(action: {}) {
+                        Button(action: {
+                            profileIcon = "leoneTesta"
+                        }) {
                         Image("leoneTesta")
                             .resizable()
                             .scaledToFit()
@@ -85,7 +106,9 @@ struct PropicModal: View {
                         
                         //icon 5
                         
-                        Button(action: {}) {
+                        Button(action: {
+                            profileIcon = "orsoTesta"
+                        }) {
                             Image("orsoTesta")
                                 .resizable()
                                 .scaledToFit()
@@ -97,7 +120,9 @@ struct PropicModal: View {
                         
                         //icon 6
                         
-                        Button(action: {}) {
+                        Button(action: {
+                            profileIcon = "tigreTesta"
+                        }) {
                                 Image("tigreTesta")
                                     .resizable()
                                     .scaledToFit()
@@ -115,7 +140,7 @@ struct PropicModal: View {
             } header: {
                 Text("User avatar")
             }
-            
+    
                 HStack{
                     Spacer()
                 Button {
@@ -129,20 +154,18 @@ struct PropicModal: View {
                         .background(Color.accentColor)
                         .cornerRadius(18)
                 }
-Spacer()
+                    Spacer()
                 }
             
         }
-//        .toolbar {
-//            ToolbarItem(placement: .navigationBarTrailing) {
-//                Button("Done"){}
-//            }
-//        }
     }
+}
 }
 
 struct PropicModal_Previews: PreviewProvider {
     static var previews: some View {
-       ContentView()
+//       ContentView()
+PropicModal()
+        
     }
 }

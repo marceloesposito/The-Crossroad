@@ -60,6 +60,18 @@ struct ContentView: View {
                 
                 //button opens modal, to change into navigation link
                 
+                HStack {
+                    Image(systemName: "list.bullet.rectangle.portrait")
+                        .font(.title2)
+                        .padding(.leading, 20)
+                    Text("My Routines")
+                        .font(.title2)
+                        .fontWeight(.semibold)
+                      
+                    Spacer()
+                    
+                }
+                
                 ScrollView(.vertical) {
                     Section {
                         LazyVGrid(columns: columns,spacing: 20, pinnedViews: .sectionHeaders) {
@@ -79,19 +91,19 @@ struct ContentView: View {
                     // header with button to add routines
                     
                 header:{
-                    HStack{
-                        Image(systemName: "list.bullet.rectangle.portrait")
-                            .padding(.leading, 20)
-                            .font(.title2)
-
-                        Text("My Routines")
-                            .font(.title2)
-                            .fontWeight(.semibold)
-                            
-                        Spacer()
-                    
-                    }
-                    .padding(.bottom, 5)
+//                    HStack{
+//                        Image(systemName: "list.bullet.rectangle.portrait")
+//                            .padding(.leading, 20)
+//                            .font(.title2)
+//
+//                        Text("My Routines")
+//                            .font(.title2)
+//                            .fontWeight(.semibold)
+//                            
+//                        Spacer()
+//                    
+//                    }
+//                    .padding(.bottom, 5)
                 }
                 }
             }

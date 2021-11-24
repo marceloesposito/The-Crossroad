@@ -75,11 +75,10 @@ struct OverallProgressView: View {
                     VStack{
                         
                         ZStack {
-                            HStack{
-                                Color.blue
-                                    .frame(height: 80)
-                                    .cornerRadius(40)
-                            }.padding()
+                            RoundedRectangle(cornerRadius: 40)
+                                .frame(height: 80)
+                                .cornerRadius(40)
+    
                         }
                         
                         ZStack {
