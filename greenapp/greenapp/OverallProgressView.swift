@@ -63,46 +63,46 @@ struct OverallProgressView: View {
                     
                 }
                 
-                HStack{
-                    
-                    Text("Learn More")
-                        .font(.title.bold())
-                        .padding(.top, 30)
-                        .padding(.leading, 20)
-                    
-                    Spacer()
-                }
-                    VStack{
-                        
-                        ZStack {
-                            RoundedRectangle(cornerRadius: 40)
-                                .frame(height: 80)
-                                .cornerRadius(40)
-    
-                        }
-                        
-                        ZStack {
-                            HStack{
-                                Color.green
-                                    .frame(height: 80)
-                                    .cornerRadius(40)
-                            }.padding()
-                        }
-                        
-                        ZStack {
-                            HStack{
-                                Color.yellow
-                                    .frame(height: 80)
-                                    .cornerRadius(40)
-                            }
-                            .padding()
-                        }
-                        
-                    }
-                    
-                
-
-                Spacer()
+//                HStack{
+//
+//                    Text("Learn More")
+//                        .font(.title.bold())
+//                        .padding(.top, 30)
+//                        .padding(.leading, 20)
+//
+//                    Spacer()
+//                }
+//                    VStack{
+//
+//                        ZStack {
+//                            RoundedRectangle(cornerRadius: 40)
+//                                .frame(height: 80)
+//                                .cornerRadius(40)
+//
+//                        }
+//
+//                        ZStack {
+//                            HStack{
+//                                Color.green
+//                                    .frame(height: 80)
+//                                    .cornerRadius(40)
+//                            }.padding()
+//                        }
+//
+//                        ZStack {
+//                            HStack{
+//                                Color.yellow
+//                                    .frame(height: 80)
+//                                    .cornerRadius(40)
+//                            }
+//                            .padding()
+//                        }
+//
+//                    }
+//
+//                
+//
+//                Spacer()
             }
             .navigationTitle(routineName)
             .toolbar {
