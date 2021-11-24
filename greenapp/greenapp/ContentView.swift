@@ -10,6 +10,7 @@ import SwiftUI
 struct ContentView: View {
     
     @State var isShowing: Bool = false
+    @State var propicModalShowing: Bool = false
     
     var body: some View {
         let columns: [GridItem] = [
@@ -40,7 +41,7 @@ struct ContentView: View {
                 }
                 
                 NavigationLink {
-                    Text("ciao")
+                    OverallProgressView(routineName: "Overall Progress")
                 } label: {
                     Text("Overall Progress")
                         .foregroundColor(Color.white)
@@ -58,6 +59,18 @@ struct ContentView: View {
                 
                 
                 //button opens modal, to change into navigation link
+                
+                HStack {
+                    Image(systemName: "list.bullet.rectangle.portrait")
+                        .font(.title2)
+                        .padding(.leading, 20)
+                    Text("My Routines")
+                        .font(.title2)
+                        .fontWeight(.semibold)
+                      
+                    Spacer()
+                    
+                }
                 
                 ScrollView(.vertical) {
                     Section {
@@ -78,30 +91,37 @@ struct ContentView: View {
                     // header with button to add routines
                     
                 header:{
-                    HStack{
-                        Image(systemName: "list.bullet.rectangle.portrait")
-                            .padding(.leading, 20)
-                            .font(.title2)
-
-                        Text("My Routines")
-                            .font(.title2)
-                            .fontWeight(.semibold)
-                            
-                        Spacer()
-                    
-                    }
-                    .padding(.bottom, 5)
+//                    HStack{
+//                        Image(systemName: "list.bullet.rectangle.portrait")
+//                            .padding(.leading, 20)
+//                            .font(.title2)
+//
+//                        Text("My Routines")
+//                            .font(.title2)
+//                            .fontWeight(.semibold)
+//                            
+//                        Spacer()
+//                    
+//                    }
+//                    .padding(.bottom, 5)
                 }
                 }
             }
             
             // navigation bar controls and title
-            .navigationTitle("Greenapp")
+            .navigationTitle("GreenMeApp")
             .toolbar {
-                NavigationLink(destination: Text ("Pla")) {
-                    Image(systemName: "person.circle.fill").foregroundColor(.accentColor).font(.title)}
+                Button {
+                    propicModalShowing.toggle()
+                } label: {
+                    Image(systemName: "person.circle.fill")
+                        .font(.title)
+                }
+
             }
-        }
+        }.popover(isPresented: $propicModalShowing, content: {
+            PropicModal()
+        })
         .sheet(isPresented: $isShowing, content: {
             RoutineView()
         })

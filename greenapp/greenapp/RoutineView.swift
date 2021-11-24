@@ -10,6 +10,9 @@ import SwiftUI
 
 struct RoutineView: View {
     
+    
+    
+    
     @State private var routineName: String = ""
     @State private var isEditing = false
     @State var categories: String = "Category"
@@ -19,7 +22,8 @@ struct RoutineView: View {
     let categoryOptions : [String] = ["None", "House", "Nutrition", "Transportation"]
     var pickerColor: Color = Color.primary
     
-//    @ObservedObject var newRoutine: Routine = Routine()
+   
+
     
     @Environment(\.presentationMode) var presentationMode
     

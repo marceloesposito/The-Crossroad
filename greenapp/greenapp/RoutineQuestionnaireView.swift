@@ -14,7 +14,9 @@ struct transportationRoutineQuestionnaireView: View {
     @State var kilometers: Int = 0
     @State var vehicleType: String = ""
     @State var frequency: String = ""
+//    @Binding var routineName: String
     
+//    @StateObject var myCar: TransportationRoutine = TransportationRoutine(name: routineName, category: "Transportation")
     
     enum frequencyOptions: String, CaseIterable{
         case yearly = "Yearly"
@@ -23,19 +25,6 @@ struct transportationRoutineQuestionnaireView: View {
         case daily = "Daily"
     }
     var stepperValue: Int = 100
-
-//    func getStepperValue (frequency: frequencyOptions){
-//        switch frequency {
-//        case .yearly:
-//            stepperValue = 500
-//        case .monthly:
-//            stepperValue = 200
-//        case .weekly:
-//            stepperValue = 100
-//        case .daily:
-//            stepperValue = 10
-//        }
-//    }
     
     @State private var frequencyOption: frequencyOptions = .daily
     
