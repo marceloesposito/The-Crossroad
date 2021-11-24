@@ -109,7 +109,7 @@ struct ContentView: View {
             }
             
             // navigation bar controls and title
-            .navigationTitle("Greenapp")
+            .navigationTitle("GreenMeApp")
             .toolbar {
                 Button {
                     propicModalShowing.toggle()
